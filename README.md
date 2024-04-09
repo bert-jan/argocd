@@ -1,2 +1,2 @@
-# argocd
-ArgoCD
+# Argo CD  
+Managed ArgoCD
