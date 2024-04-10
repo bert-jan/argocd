@@ -10,6 +10,9 @@ server:
     repositories: |
       - type: git
         url: https://github.com/bert-jan/argocd.git
+      - name: argo-helm
+        type: helm
+        url: https://argoproj.github.io/argo-helm 
   additionalApplications: 
     - name: argocd
       namespace: argocd
@@ -29,14 +32,14 @@ server:
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
-    - name: apps
+    - name: argocd-apps
       namespace: argocd
       destination:
         namespace: argocd
         server: https://kubernetes.default.svc
       project: argocd
       source:
-        path: argocd-apps
+        path: argocd-apps/
         repoURL: https://github.com/bert-jan/argocd.git
         targetRevision: main
         directory:
@@ -46,7 +49,7 @@ server:
         automated:
           selfHeal: true
           prune: true
-    - name: projects
+    - name: argocd-appprojects
       namespace: argocd
       destination:
         namespace: argocd
@@ -68,7 +71,7 @@ server:
     namespace: argocd
     additionalLabels: {}
     additionalAnnotations: {}
-    description: additional Argo CD Projects
+    description: Argocd Project
     sourceRepos:
     - '*'
     destinations:
