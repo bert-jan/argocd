@@ -39,7 +39,7 @@ server:
         server: https://kubernetes.default.svc
       project: argocd
       source:
-        path: argocd-apps/
+        path: argocd-apps
         repoURL: https://github.com/bert-jan/argocd.git
         targetRevision: main
         directory:
