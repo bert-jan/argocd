@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: dev
     server: https://kubernetes.default.svc
-  project: 
+  project: dev-project 
   source:
     path: apps/bookinfo/
     repoURL: https://github.com/bert-jan/argocd.git
