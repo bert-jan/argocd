@@ -1,4 +1,5 @@
 bases:
 - ../../base
 patchesStrategicMerge:
+- argocd-cm.yaml
 - rbac-team-dev.yaml
